@@ -417,14 +417,6 @@ system trem1, trem2, trem3;
 			</result>
 		</query>
 		<query>
-			<formula>A[] not (((trem1.sec_5_descarga || trem1.sec_5_saida) &amp;&amp; (trem2.sec_5_descarga || trem2.sec_5_saida)) || 
-    ((trem1.sec_5_descarga || trem1.sec_5_saida) &amp;&amp; (trem3.sec_5_descarga || trem3.sec_5_saida)) || 
-    ((trem2.sec_5_descarga || trem2.sec_5_saida) &amp;&amp; (trem3.sec_5_descarga || trem3.sec_5_saida)))</formula>
-			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 03:19:56 -0300">
-			</result>
-		</query>
-		<query>
 			<formula>A[] not(((trem1.sec_1_descarga || trem1.sec_1_saida) &amp;&amp; (trem2.sec_1_descarga || trem2.sec_1_saida)) || 
     ((trem1.sec_1_descarga || trem1.sec_1_saida) &amp;&amp; (trem3.sec_1_descarga || trem3.sec_1_saida)) || 
     ((trem2.sec_1_descarga || trem2.sec_1_saida) &amp;&amp; (trem3.sec_1_descarga || trem3.sec_1_saida)))</formula>
@@ -438,6 +430,46 @@ system trem1, trem2, trem3;
     ((trem2.sec_2_descarga || trem2.sec_2_saida || trem2.sec_3_descarga || trem2.sec_3_saida) &amp;&amp; (trem3.sec_2_descarga || trem3.sec_2_saida || trem3.sec_3_descarga || trem3.sec_3_saida)))</formula>
 			<comment/>
 			<result outcome="success" type="quality" timestamp="2024-10-08 03:19:56 -0300">
+			</result>
+		</query>
+		<query>
+			<formula>A[] not (((trem1.sec_4_descarga || trem1.sec_4_saida) &amp;&amp; (trem2.sec_4_descarga || trem2.sec_4_saida)) ||
+    ((trem1.sec_4_descarga || trem1.sec_4_saida) &amp;&amp; (trem3.sec_4_descarga || trem3.sec_4_saida)) ||
+    ((trem2.sec_4_descarga || trem2.sec_4_saida) &amp;&amp; (trem3.sec_4_descarga || trem3.sec_4_saida)))</formula>
+			<comment/>
+			<result outcome="success" type="quality" timestamp="2024-10-08 09:54:20 -0300">
+			</result>
+		</query>
+		<query>
+			<formula>A[] not (((trem1.sec_5_descarga || trem1.sec_5_saida) &amp;&amp; (trem2.sec_5_descarga || trem2.sec_5_saida)) ||
+    ((trem1.sec_5_descarga || trem1.sec_5_saida) &amp;&amp; (trem3.sec_5_descarga || trem3.sec_5_saida)) ||
+    ((trem2.sec_5_descarga || trem2.sec_5_saida) &amp;&amp; (trem3.sec_5_descarga || trem3.sec_5_saida)))</formula>
+			<comment/>
+			<result outcome="success" type="quality" timestamp="2024-10-08 09:54:20 -0300">
+			</result>
+		</query>
+		<query>
+			<formula>A[] not (((trem1.sec_6_descarga || trem1.sec_6_saida) &amp;&amp; (trem2.sec_6_descarga || trem2.sec_6_saida)) ||
+    ((trem1.sec_6_descarga || trem1.sec_6_saida) &amp;&amp; (trem3.sec_6_descarga || trem3.sec_6_saida)) ||
+    ((trem2.sec_6_descarga || trem2.sec_6_saida) &amp;&amp; (trem3.sec_6_descarga || trem3.sec_6_saida)))</formula>
+			<comment/>
+			<result outcome="success" type="quality" timestamp="2024-10-08 09:54:20 -0300">
+			</result>
+		</query>
+		<query>
+			<formula>A[] not (((trem1.sec_7_descarga || trem1.sec_7_saida) &amp;&amp; (trem2.sec_7_descarga || trem2.sec_7_saida)) ||
+    ((trem1.sec_7_descarga || trem1.sec_7_saida) &amp;&amp; (trem3.sec_7_descarga || trem3.sec_7_saida)) ||
+    ((trem2.sec_7_descarga || trem2.sec_7_saida) &amp;&amp; (trem3.sec_7_descarga || trem3.sec_7_saida)))</formula>
+			<comment/>
+			<result outcome="success" type="quality" timestamp="2024-10-08 09:54:20 -0300">
+			</result>
+		</query>
+		<query>
+			<formula>A[] not (((trem1.sec_8_descarga || trem1.sec_8_saida) &amp;&amp; (trem2.sec_8_descarga || trem2.sec_8_saida)) ||
+    ((trem1.sec_8_descarga || trem1.sec_8_saida) &amp;&amp; (trem3.sec_8_descarga || trem3.sec_8_saida)) ||
+    ((trem2.sec_8_descarga || trem2.sec_8_saida) &amp;&amp; (trem3.sec_8_descarga || trem3.sec_8_saida)))</formula>
+			<comment/>
+			<result outcome="success" type="quality" timestamp="2024-10-08 09:54:20 -0300">
 			</result>
 		</query>
 		<query>
