@@ -15,11 +15,11 @@ O sistema modela um transporte de carga onde:
   * Carregamento/Descarregamento: Ao entrar em uma nova seção, o trem deve parar para carregar/descarregar por pelo menos 25 unidades de tempo.
   * Autonomia dos Trens: O trem n deve parar para reabastecer a cada n voltas completas na via.
  
+![Sistema modelado](/autom_trens.png)
+ 
 ## Detalhes dos Autômatos
 
 ### Autômato do Trem
-
-Cada trem é modelado por um autômato que representa seu comportamento:
 
 Estados Principais:
 * `estacionamento`: Trem parado no estacionamento.
