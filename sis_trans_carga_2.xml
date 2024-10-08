@@ -5,6 +5,7 @@
 
 const int N = 8;         // # trens
 
+const int tcarga = 0;
 const int tdesc = 25;
 const int tloc = 10;
 int[0,1] sem[N+1];
@@ -191,8 +192,8 @@ sem[1] = 0</label>
 		<transition id="id33">
 			<source ref="id0"/>
 			<target ref="id1"/>
-			<label kind="guard" x="-289" y="-518">sem[1] == 0</label>
-			<label kind="assignment" x="-289" y="-501">nvoltas = 0,
+			<label kind="guard" x="-289" y="-527">sem[1] == 0 &amp;&amp; time &gt;= tcarga</label>
+			<label kind="assignment" x="-289" y="-510">nvoltas = 0,
 time = 0,
 sem[1] = 1</label>
 			<nail x="-195" y="-476"/>
@@ -200,7 +201,8 @@ sem[1] = 1</label>
 		<transition id="id34">
 			<source ref="id1"/>
 			<target ref="id0"/>
-			<label kind="assignment" x="-127" y="-395">sem[1] = 0</label>
+			<label kind="assignment" x="-127" y="-395">sem[1] = 0,
+time = 0</label>
 			<nail x="-102" y="-476"/>
 		</transition>
 	</template>
@@ -214,43 +216,43 @@ system trem1, trem2, trem3;
 		<query>
 			<formula>A[] not deadlock</formula>
 			<comment>O sistema é livre de deadlock.</comment>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[] not (trem1.nvoltas &gt; trem1.n)</formula>
 			<comment>O trem 1 não pode dar mais de uma volta sem abastecer.</comment>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[] not (trem2.nvoltas &gt; trem2.n)</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[] not (trem3.nvoltas &gt; trem3.n)</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[](trem1.nvoltas == trem1.n) imply trem1.location == trem1.estacionamento || trem1.location == trem1.sec_1_descarga</formula>
 			<comment>Um trem sem autonomia está sempre em sec_1 ou estacionamento.</comment>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[](trem2.nvoltas == trem2.n) imply trem2.location == trem2.estacionamento || trem2.location == trem2.sec_1_descarga</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[](trem3.nvoltas == trem3.n) imply trem3.location == trem3.estacionamento || trem3.location == trem3.sec_1_descarga</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
@@ -258,7 +260,7 @@ system trem1, trem2, trem3;
     ((trem1.sec_1_descarga || trem1.sec_1_saida) &amp;&amp; (trem3.sec_1_descarga || trem3.sec_1_saida)) || 
     ((trem2.sec_1_descarga || trem2.sec_1_saida) &amp;&amp; (trem3.sec_1_descarga || trem3.sec_1_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:48 -0300">
 			</result>
 		</query>
 		<query>
@@ -266,7 +268,7 @@ system trem1, trem2, trem3;
     ((trem1.sec_2_descarga || trem1.sec_2_saida || trem1.sec_3_descarga || trem1.sec_3_saida) &amp;&amp; (trem3.sec_2_descarga || trem3.sec_2_saida || trem3.sec_3_descarga || trem3.sec_3_saida)) || 
     ((trem2.sec_2_descarga || trem2.sec_2_saida || trem2.sec_3_descarga || trem2.sec_3_saida) &amp;&amp; (trem3.sec_2_descarga || trem3.sec_2_saida || trem3.sec_3_descarga || trem3.sec_3_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
@@ -274,7 +276,7 @@ system trem1, trem2, trem3;
     ((trem1.sec_4_descarga || trem1.sec_4_saida) &amp;&amp; (trem3.sec_4_descarga || trem3.sec_4_saida)) ||
     ((trem2.sec_4_descarga || trem2.sec_4_saida) &amp;&amp; (trem3.sec_4_descarga || trem3.sec_4_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
@@ -282,7 +284,7 @@ system trem1, trem2, trem3;
     ((trem1.sec_5_descarga || trem1.sec_5_saida) &amp;&amp; (trem3.sec_5_descarga || trem3.sec_5_saida)) ||
     ((trem2.sec_5_descarga || trem2.sec_5_saida) &amp;&amp; (trem3.sec_5_descarga || trem3.sec_5_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
@@ -290,7 +292,7 @@ system trem1, trem2, trem3;
     ((trem1.sec_6_descarga || trem1.sec_6_saida) &amp;&amp; (trem3.sec_6_descarga || trem3.sec_6_saida)) ||
     ((trem2.sec_6_descarga || trem2.sec_6_saida) &amp;&amp; (trem3.sec_6_descarga || trem3.sec_6_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:03 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
@@ -298,7 +300,7 @@ system trem1, trem2, trem3;
     ((trem1.sec_7_descarga || trem1.sec_7_saida) &amp;&amp; (trem3.sec_7_descarga || trem3.sec_7_saida)) ||
     ((trem2.sec_7_descarga || trem2.sec_7_saida) &amp;&amp; (trem3.sec_7_descarga || trem3.sec_7_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:04 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
@@ -306,26 +308,26 @@ system trem1, trem2, trem3;
     ((trem1.sec_8_descarga || trem1.sec_8_saida) &amp;&amp; (trem3.sec_8_descarga || trem3.sec_8_saida)) ||
     ((trem2.sec_8_descarga || trem2.sec_8_saida) &amp;&amp; (trem3.sec_8_descarga || trem3.sec_8_saida)))</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:04 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[] not (trem1.estacionamento || trem1.sec_1_descarga) &amp;&amp; (trem2.estacionamento || trem2.sec_1_descarga) &amp;&amp; (trem3.estacionamento || trem3.sec_1_descarga) imply tempo_abs &gt; 0
 </formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:04 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>A[] (trem1.nvoltas &gt; 0 || trem2.nvoltas &gt; 0 || trem3.nvoltas &gt; 0) imply tempo_abs &gt;= 280</formula>
 			<comment/>
-			<result outcome="success" type="quality" timestamp="2024-10-08 10:04:04 -0300">
+			<result outcome="success" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 		<query>
 			<formula>E&lt;&gt; (trem1.nvoltas &gt; 0 || trem2.nvoltas &gt; 0 || trem3.nvoltas &gt; 0) &amp;&amp; tempo_abs &lt; 280</formula>
 			<comment/>
-			<result outcome="failure" type="quality" timestamp="2024-10-08 10:04:04 -0300">
+			<result outcome="failure" type="quality" timestamp="2024-10-08 10:08:49 -0300">
 			</result>
 		</query>
 	</queries>
