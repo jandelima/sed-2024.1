@@ -68,7 +68,7 @@ As seguintes propriedades foram especificadas e verificadas usando o UPPAAL:
             ((trem2.sec_5...) && (trem3.sec_5...)))`: Nunca há mais de um trem na seção 5.
    Verificação similar para as outras seções. A verificação das seções 2 e 3 é parecida, porém considera as duas seções como uma só.
 5. Tempo mínimo para completar uma volta: <br>
-  `A[] (trem1.nvoltas > 0 || trem2.nvoltas > 0 || trem3.nvoltas > 0) imply tempo_abs >= 280`: Uma volta completa não pode ser realizada em menos de 280 unidades de tempo (dadas as restrições do problema).
+  `A[] (trem1.nvoltas > 0 || trem2.nvoltas > 0 || trem3.nvoltas > 0) imply tempo_abs >= 280`: Uma volta completa não pode ser realizada em menos de 280 unidades de tempo (35 para cada seção).
    
 
 
