@@ -1,4 +1,4 @@
-# Projeto 2
+# Modelo de Sistema de Transporte de Carga com UPPAAL
 
 Este repositório contém o modelo de um sistema de transporte de carga desenvolvido usando o UPPAAL. O sistema consiste em uma via circular dividida em 8 seções e 3 veículos (trens) que transportam cargas entre estas seções. Este documento fornece uma descrição detalhada do sistema, dos autômatos temporizados utilizados e das propriedades verificadas.
 
@@ -14,7 +14,8 @@ O sistema modela um transporte de carga onde:
   * Deslocamento: O tempo para se mover entre seções é de 10 unidades de tempo.
   * Carregamento/Descarregamento: Ao entrar em uma nova seção, o trem deve parar para carregar/descarregar por pelo menos 25 unidades de tempo.
   * Autonomia dos Trens: O trem n deve parar para reabastecer a cada n voltas completas na via.
- 
+
+Segue uma imagem com o sistema completo modelado:
 ![Sistema modelado](/autom_trens.png)
  
 ## Detalhes dos Autômatos
